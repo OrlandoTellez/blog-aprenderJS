@@ -14,7 +14,7 @@ import iconMenuHamburguesaModoOscuro from "@/assets/iconos/MenuHamburguesa-claro
   <figure class="menu-icon">
     <img src={iconMenuHamburguesaModoOscuro.src} alt="icono-tres barras">
   </figure>
-  <nav class="nav active">
+  <nav class="contenedor active">
     <ul>
       <li><a href="/">Inicio</a></li>
       <li><a href="/">Tutoriales</a></li>
@@ -28,11 +28,51 @@ import iconMenuHamburguesaModoOscuro from "@/assets/iconos/MenuHamburguesa-claro
     header{
         display: flex;
         justify-content: space-between;
+        background-color: var(--color-secundario-oscuro);
+        padding: 20px;
     }
+    
+    .logo-link{
+        display: flex;
+        gap: 10px;
+    }
+
+    nav{
+        position: absolute;
+        height: 100vh;
+        width: 80vw;
+        left: 0;
+        top: 0;
+        z-index: 20;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--color-secundario-oscuro);
+        transition: all ease .4s;
+    }
+
+    .active{
+        transform: translate(-1200px);
+    }
+    
 
     @media only screen and (min-width: 1024px){
         .menu-icon{
             display: none;
         }
+
+        ul{
+            display: flex;
+            gap: 20px;
+        }
     }
 </style>
+
+<script>
+    let icono = document.querySelector(".menu-icon")
+    let contenedor = document.querySelector(".contenedor")
+    icono?.addEventListener("click", () => {
+        contenedor?.classList.toggle("active")
+    })
+</script>

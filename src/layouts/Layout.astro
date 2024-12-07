@@ -1,5 +1,7 @@
 ---
 import '@fontsource-variable/inter';
+import Header from "@/components/Header.astro"
+
 
 interface Props{
 	tituloPagina: string;
@@ -19,6 +21,8 @@ const {tituloPagina} = Astro.props
 		<title>{tituloPagina}</title>
 	</head>
 	<body>
+	<Header />
+
 		<slot />
 	</body>
 </html>
@@ -41,6 +45,14 @@ const {tituloPagina} = Astro.props
 
 	h1{
 		font-size: 40px;
+	}
+
+	a{
+		text-decoration: none;
+		color: var(--color-fuente-modo-oscuro);
+	}
+	li{
+		list-style: none;
 	}
 
 	html{
