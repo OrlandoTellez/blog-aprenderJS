@@ -1,0 +1,38 @@
+---
+import iconJavascript from "@/assets/iconos/JavaScript.svg";
+import iconMenuHamburguesaModoOscuro from "@/assets/iconos/MenuHamburguesa-claro.svg"
+---
+
+<header>
+  <figure>
+    <a href="/" class="logo-link">
+      <img src={iconJavascript.src} alt="logo" />
+      <h2>Aprendiendo JavaScript</h2>
+    </a>
+  </figure>
+  <div class="opacity on"></div>
+  <figure class="menu-icon">
+    <img src={iconMenuHamburguesaModoOscuro.src} alt="icono-tres barras">
+  </figure>
+  <nav class="nav active">
+    <ul>
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/">Tutoriales</a></li>
+      <li><a href="/">Recursos</a></li>
+      <li><a href="/">Acerca De</a></li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+    header{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    @media only screen and (min-width: 1024px){
+        .menu-icon{
+            display: none;
+        }
+    }
+</style>
