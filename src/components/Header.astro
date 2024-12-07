@@ -26,10 +26,14 @@ import iconMenuHamburguesaModoOscuro from "@/assets/iconos/MenuHamburguesa-claro
 
 <style>
     header{
+        width: 100%;
+        max-width: var(--ancho-maximo);
         display: flex;
+        align-items: center;
         justify-content: space-between;
         background-color: var(--color-secundario-oscuro);
         padding: 20px;
+        position: fixed;
     }
     
     .logo-link{
@@ -60,6 +64,16 @@ import iconMenuHamburguesaModoOscuro from "@/assets/iconos/MenuHamburguesa-claro
     @media only screen and (min-width: 1024px){
         .menu-icon{
             display: none;
+        }
+
+        nav{
+            position: static;
+            height: 100%;
+            width: 35%;
+        }
+
+        .active{
+            transform: none;
         }
 
         ul{

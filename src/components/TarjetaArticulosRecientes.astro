@@ -1,0 +1,38 @@
+---
+interface Props{
+    titulo: string;
+    descripcion: string;
+    fecha: string;
+    url: string;
+}
+
+const {titulo, descripcion, fecha, url} = Astro.props
+
+---
+
+
+<a href={url}> 
+    <h2>{titulo}</h2>
+    <p>{descripcion}</p>
+    <p class="fecha">{fecha}</p>
+</a>
+
+
+<style>
+    a{
+        background-color: var(--color-secundario-oscuro);
+        border-radius: 20px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    a:hover{
+        transform: scale(1.04); /* Aumenta el tamaño en un 10% */
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+    }
+</style>
+
+

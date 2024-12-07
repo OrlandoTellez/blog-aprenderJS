@@ -21,8 +21,7 @@ const {tituloPagina} = Astro.props
 		<title>{tituloPagina}</title>
 	</head>
 	<body>
-	<Header />
-
+		<Header />
 		<slot />
 	</body>
 </html>
@@ -32,9 +31,10 @@ const {tituloPagina} = Astro.props
 		--color-principal-oscuro: #212737;
 		--color-secundario-oscuro: #2a3447;
 		--color-fuente-modo-oscuro: #60a5fa; 
-
+		--color-fuente-fechas: #9ca1a1;
+		--color-blanco: #ffffff;
 		--ancho-maximo: 1024px;
-
+	
 	}
 
 	*{
@@ -45,14 +45,30 @@ const {tituloPagina} = Astro.props
 
 	h1{
 		font-size: 40px;
+		color: var(--color-fuente-modo-oscuro);
+	}
+
+	h2{
+		font-size: 23px;
+		color: var(--color-fuente-modo-oscuro);
+
+	}
+
+	p{
+		font-size: 14px;
 	}
 
 	a{
 		text-decoration: none;
-		color: var(--color-fuente-modo-oscuro);
+		color: var(--color-blanco);
 	}
+
 	li{
 		list-style: none;
+	}
+
+	.fecha{
+		color: var(--color-fuente-fechas);
 	}
 
 	html{
@@ -67,7 +83,7 @@ const {tituloPagina} = Astro.props
 		width: 100%;
 		max-width: var(--ancho-maximo);
 		font-family: 'Inter Variable', sans-serif;
-		color: var(--color-fuente-modo-oscuro);
+		color: var(--color-blanco);
 	}
     
 </style>
