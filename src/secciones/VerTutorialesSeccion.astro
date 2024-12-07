@@ -1,0 +1,32 @@
+---
+import Boton from '@/components/Boton.astro';
+
+interface Props{
+    titulo: string;
+    descripcion: string;
+}
+
+const {titulo, descripcion} = Astro.props
+---
+
+<section>
+    <h3>{titulo}</h3>
+    <p>{descripcion}</p>
+    <Boton 
+    titulo='Ver tutoriales'
+    url='/'
+    />
+</section>
+
+<style>
+    section{
+        width: 100%;
+        background-color: var(--color-secundario-oscuro);
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 20px;
+    }
+</style>

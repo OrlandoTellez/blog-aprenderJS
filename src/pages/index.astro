@@ -2,6 +2,7 @@
 import Layout from '@/layouts/Layout.astro';
 import ArticulosRecientes from '@/secciones/ArticulosRecientes.astro';
 import Hero from '@/secciones/Hero.astro';
+import VerTutorialesSeccion from '@/secciones/VerTutorialesSeccion.astro';
 ---	
 
 <Layout tituloPagina='Aprender Javascript'>
@@ -9,5 +10,20 @@ import Hero from '@/secciones/Hero.astro';
 	tituloSeccion='Aprender Javascript desde Cero'
 	subtituloSeccion='Domina el lenguaje de programación más popular de la web con tutoriales prácticos y ejemplos del mundo real'
 	/> 
-	<ArticulosRecientes />
+	<section>	
+		<ArticulosRecientes />
+		
+		<VerTutorialesSeccion 
+		titulo='¿Listo para empezar?'
+		descripcion='Comienza tu viaje en el mundo de la programación JavaScript.'
+		/>
+	</section>
 </Layout>
+
+<style>
+	section{
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+</style>
