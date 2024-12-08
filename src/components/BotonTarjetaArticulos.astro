@@ -1,0 +1,19 @@
+---
+interface Props{
+    titulo: string;
+    url: string;
+}
+
+const{titulo, url} = Astro.props
+---
+
+<a href={url}>{titulo}</a>
+
+<style>
+    a{
+        color: var(--color-fuente-modo-oscuro);
+        padding: 5px 20px;
+        background-color: var(--color-boton-oscuro);
+        border-radius: 10px;
+    }
+</style>

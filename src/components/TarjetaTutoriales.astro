@@ -1,0 +1,40 @@
+---
+import BotonTarjetaArticulos from './BotonTarjetaArticulos.astro';
+
+interface Props {
+    titulo: string;
+    descripcionPrevia: string;
+    tag: string;
+    url: string;
+}
+const {titulo, descripcionPrevia, tag, url} = Astro.props
+---
+
+<article>
+    <h2>{titulo}</h2>
+    <p>{descripcionPrevia}</p>
+    <div>
+        <p>{tag}</p>
+        <BotonTarjetaArticulos 
+        titulo='Leer más ->'
+        url={url}
+        />
+    </div>
+</article>
+
+<style>
+    article{
+        display: flex;
+        flex-direction: column;
+        background-color: var(--color-secundario-oscuro);
+        justify-content: space-between;
+        border-radius: 15px;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    div{
+        display: flex;
+        justify-content: space-between;
+    }
+</style>

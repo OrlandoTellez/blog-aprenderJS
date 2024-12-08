@@ -1,9 +1,71 @@
 ---
+import TarjetaTutoriales from "@/components/TarjetaTutoriales.astro";
 import Layout from "@/layouts/Layout.astro";
 
-
+const articuloDescripcion = [
+  {
+    titulo: "Introducción a JavaScript",
+    descripcionPrevia:
+      "Aprende los fundamentos básicos del lenguaje y su importancia en el desarrollo web.",
+    url: "/",
+    tag: "Principiante",
+  },
+  {
+    titulo: "Variables y Tipos de Datos",
+    descripcionPrevia:
+      "Explora los diferentes tipos de datos y cómo trabajar con variables en JavaScript.",
+    url: "/",
+    tag: "Principiante",
+  },
+  {
+    titulo: "Funciones y Scope",
+    descripcionPrevia:
+      "Domina el concepto de funciones y comprende el alcance de las variables.",
+    url: "/",
+    tag: "Intermedio",
+  },
+  {
+    titulo: "Arrays y Objetos",
+    descripcionPrevia:
+      "Aprende a trabajar con estructuras de datos complejas en JavaScript.",
+    url: "/",
+    tag: "Intermedio",
+  },
+];
 ---
 
 <Layout tituloPagina="Tutoriales">
-
+  <section>
+    <h1>Tutoriales de JavaScript</h1>
+    <article>
+      {
+        articuloDescripcion.map((articulo) => (
+          <TarjetaTutoriales {...articulo} />
+        ))
+      }
+    </article>
+  </section>
 </Layout>
+
+<style>
+  section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0px;
+  }
+
+  article{
+    width: 100%;
+        margin-top: 25px;
+        display: grid;
+        gap: 30px;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  h1{
+    color: white;
+  }
+</style>
