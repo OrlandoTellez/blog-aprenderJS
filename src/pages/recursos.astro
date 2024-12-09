@@ -1,9 +1,52 @@
 ---
+import TarjetaRecursos from "@/components/TarjetaRecursos.astro";
 import Layout from "@/layouts/Layout.astro";
 
 
 ---
 
 <Layout tituloPagina="Recursos">
-
+    <section>
+        <h1>Recursos de aprendizaje</h1>
+        <div>
+            <TarjetaRecursos 
+            titulo="MDN Web Docs"
+            descripcionPrevia="La documentación más completa sobre JavaScript, mantenida por Mozilla."
+            url="/"
+            />
+        
+            <TarjetaRecursos 
+            titulo="MDN Web Docs"
+            descripcionPrevia="La documentación más completa sobre JavaScript, mantenida por Mozilla."
+            url="/"
+            />
+        
+            <TarjetaRecursos 
+            titulo="MDN Web Docs"
+            descripcionPrevia="La documentación más completa sobre JavaScript, mantenida por Mozilla."
+            url="/"
+            />
+        </div>
+    </section>
 </Layout>
+
+<style>
+    section{
+        padding: 100px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    h1{
+        color: white;
+    }
+
+    div{
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+        width: 100%;
+    }
+</style>

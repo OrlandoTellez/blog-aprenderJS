@@ -4,19 +4,17 @@ import BotonTarjetaArticulos from './BotonTarjetaArticulos.astro';
 interface Props {
     titulo: string;
     descripcionPrevia: string;
-    tag: string;
     url: string;
 }
-const {titulo, descripcionPrevia, tag, url} = Astro.props
+const {titulo, descripcionPrevia, url} = Astro.props
 ---
 
 <article>
     <h2>{titulo}</h2>
     <p>{descripcionPrevia}</p>
     <div>
-        <p>{tag}</p>
         <BotonTarjetaArticulos 
-        titulo='Leer más ->'
+        titulo='Visitar Recurso ->'
         url={url}
         />
     </div>
@@ -29,7 +27,7 @@ const {titulo, descripcionPrevia, tag, url} = Astro.props
         background-color: var(--color-secundario-oscuro);
         justify-content: space-between;
         border-radius: 15px;
-        padding: 20px;
+        padding: 40px;
         gap: 15px;
     }
 
