@@ -36,7 +36,9 @@ const articuloDescripcion = [
 
 <Layout tituloPagina="Tutoriales">
   <section>
-    <h1>Tutoriales de JavaScript</h1>
+    <div>
+      <h1>Tutoriales de JavaScript</h1>
+    </div>
     <article>
       {
         articuloDescripcion.map((articulo) => (
@@ -55,12 +57,12 @@ const articuloDescripcion = [
     align-items: center;
     justify-content: center;
     padding: 100px 20px;
+    gap: 30px;
   }
 
   
   article{
     width: 100%;
-    margin-top: 25px;
     display: grid;
     gap: 30px;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -68,5 +70,10 @@ const articuloDescripcion = [
 
   h1{
     color: white;
+  }
+  div{
+    height: 20vh;
+    display: flex;
+    align-items: center;  
   }
 </style>
