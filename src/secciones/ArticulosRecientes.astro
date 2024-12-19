@@ -1,53 +1,54 @@
 ---
-import TarjetaArticulosRecientes from "@/components/TarjetaArticulosRecientes.astro" 
+import TarjetaArticulosRecientes from "@/components/TarjetaArticulosRecientes.astro";
 
-const titulo = "Articulos Recientes"
+const titulo = "Articulos Recientes";
 
 const articulosRecientes = [
-    {
-        titulo: "Introduccion a Javascript",
-        descripcion: "Aprende los conceptos básicos de JavaScript y da tus primeros pasos en la programación.",
-        fecha: "2024-03-20",
-        url: ""
-    },
-    {
-        titulo: "Variables y Tipos de Datos",
-        descripcion: "Descubre cómo trabajar con diferentes tipos de datos en JavaScript.",
-        fecha: "2024-03-19",
-        url: ""
-    },
-    {
-        titulo: "Funciones en JavaScript",
-        descripcion: "Domina el concepto de funciones y cómo utilizarlas efectivamente.",
-        fecha: "2024-03-18",
-        url: ""
-    }
-]
-
+  {
+    titulo: "Introduccion a Javascript",
+    descripcion:
+      "Aprende los conceptos básicos de JavaScript y da tus primeros pasos en la programación.",
+    fecha: "2024-03-20",
+    url: "",
+  },
+  {
+    titulo: "Variables y Tipos de Datos",
+    descripcion:
+      "Descubre cómo trabajar con diferentes tipos de datos en JavaScript.",
+    fecha: "2024-03-19",
+    url: "",
+  },
+  {
+    titulo: "Funciones en JavaScript",
+    descripcion:
+      "Domina el concepto de funciones y cómo utilizarlas efectivamente.",
+    fecha: "2024-03-18",
+    url: "",
+  },
+];
 ---
 
 <section>
-    <h2>{titulo}</h2>
-
-    <div>
-        {
-           articulosRecientes.map(articulo => (
-            <TarjetaArticulosRecientes {...articulo}/>
-           ))
-        }
-    </div>
+  <h2>{titulo}</h2>
+  <div>
+    {
+      articulosRecientes.map((articulo) => (
+        <TarjetaArticulosRecientes {...articulo} />
+      ))
+    }
+  </div>
 </section>
 
 <style>
-    section{
-        width: 100%;
-    }
+  section {
+    width: 100%;
+  }
 
-    div{
-        width: 100%;
-        margin-top: 25px;
-        display: grid;
-        gap: 30px;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
+  div {
+    width: 100%;
+    margin-top: 25px;
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
 </style>
