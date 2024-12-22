@@ -5,9 +5,9 @@ interface Props {
     titulo: string;
     descripcionPrevia: string;
     tag: string;
-    url: string;
+    slug: string;
 }
-const {titulo, descripcionPrevia, tag, url} = Astro.props
+const {titulo, descripcionPrevia, tag, slug} = Astro.props
 ---
 
 <article>
@@ -17,7 +17,7 @@ const {titulo, descripcionPrevia, tag, url} = Astro.props
         <p>{tag}</p>
         <BotonTarjetaArticulos 
         titulo='Leer más ->'
-        url={url}
+        slug={slug}
         />
     </div>
 </article>

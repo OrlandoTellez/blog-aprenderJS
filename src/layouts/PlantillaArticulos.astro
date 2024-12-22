@@ -22,7 +22,7 @@ const {tituloPagina} = Astro.props
 	</head>
 	<body>
 		<Header />
-        <div>
+        <div class="container-slot">
             <slot />
         </div>
 		<Footer />
@@ -95,7 +95,7 @@ const {tituloPagina} = Astro.props
 		color: var(--color-blanco);
 	}
 
-    div{
+    .container-slot{
         padding: 80px 20px;
     }
     

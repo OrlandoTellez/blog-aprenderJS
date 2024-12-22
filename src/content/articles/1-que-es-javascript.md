@@ -1,4 +1,7 @@
 ---
+titulo: Introducción a JavaScript
+descripcionPrevia: Aprende los fundamentos básicos del lenguaje y su importancia en el desarrollo web.
+tag: Principiante
 layout: "../../layouts/PlantillaArticulos.astro"
 ---
 

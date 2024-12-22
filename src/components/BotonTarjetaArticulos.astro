@@ -1,13 +1,13 @@
 ---
 interface Props{
     titulo: string;
-    url: string;
+    slug: string
 }
 
-const{titulo, url} = Astro.props
+const{titulo, slug} = Astro.props
 ---
 
-<a href={url}>{titulo}</a>
+<a href=`/tutoriales/${slug}`>{titulo}</a>
 
 <style>
     a{

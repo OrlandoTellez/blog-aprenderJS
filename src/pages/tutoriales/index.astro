@@ -1,6 +1,7 @@
 ---
 import TarjetaTutoriales from "@/components/TarjetaTutoriales.astro";
 import Layout from "@/layouts/Layout.astro";
+import { getCollection } from "astro:content";
 
 const articuloDescripcion = [
   {
@@ -32,6 +33,8 @@ const articuloDescripcion = [
     tag: "Intermedio",
   },
 ];
+
+const articulos = await getCollection("articles")
 ---
 
 <Layout tituloPagina="Tutoriales">
@@ -41,8 +44,13 @@ const articuloDescripcion = [
     </div>
     <article>
       {
-        articuloDescripcion.map((articulo) => (
-          <TarjetaTutoriales {...articulo} />
+        articulos.map((articulo) => (
+          <TarjetaTutoriales  
+          titulo={articulo.data.titulo}
+          descripcionPrevia={articulo.data.descripcionPrevia}
+          tag={articulo.data.tag}
+          slug={articulo.slug}
+          />
         ))
       }
     </article>
