@@ -1,102 +1,205 @@
 ---
-import '@fontsource-variable/inter';
-import Header from "@/components/Header.astro"
-import Footer from '@/secciones/Footer.astro';
+import "@fontsource-variable/inter";
+import Header from "@/components/Header.astro";
+import Footer from "@/secciones/Footer.astro";
 
-interface Props{
-	tituloPagina: string;
+interface Props {
+  tituloPagina: string;
 }
 
-const {tituloPagina} = Astro.props
-
+const { tituloPagina } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{tituloPagina}</title>
-	</head>
-	<body>
-		<Header />
-        <div class="container-slot">
-            <slot />
-        </div>
-		<Footer />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{tituloPagina}</title>
+  </head>
+  <body>
+    <Header />
+    <div class="container-slot">
+      <slot />
+    </div>
+    <Footer />
+  </body>
 </html>
 
 <style is:global>
-	:root{
-		--color-principal-oscuro: #212737;
-		--color-secundario-oscuro: #2a3447;
-		--color-fuente-modo-oscuro: #60a5fa; 
-		--color-boton-oscuro: #354b6b;
-		--color-fuente-fechas: #9ca1a1;
-		--color-blanco: #ffffff;
-		--ancho-maximo: 1024px;
-	
-	}
+  :root {
+    --color-principal-oscuro: #212737;
+    --color-secundario-oscuro: #2a3447;
+    --color-fuente-modo-oscuro: #60a5fa;
+    --color-boton-oscuro: #354b6b;
+    --color-fuente-fechas: #9ca1a1;
+    --color-blanco: #ffffff;
+    --ancho-maximo: 1024px;
+  }
 
-	*{
-		padding: 0;
-		margin: 0;
-		box-sizing: border-box;
-	}
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
 
-	h1{
-		font-size: 40px;
-		color: var(--color-fuente-modo-oscuro);
-	}
+  html {
+    background-color: var(--color-principal-oscuro);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 
-	h2{
-		font-size: 23px;
-		color: var(--color-fuente-modo-oscuro);
-	}
+  body {
+    width: 100%;
+    max-width: var(--ancho-maximo);
+    font-family: "Inter Variable", sans-serif;
+    color: var(--color-blanco);
+  }
 
-	h3{
-		font-size: 22px;
-	}
+  .container-slot {
+    padding: 50px 20px;
+  }
 
-	
+  h1 {
+    font-size: 40px;
+    color: var(--color-fuente-modo-oscuro);
+  }
 
-	p{
-		font-size: 14px;
-	}
+  h2 {
+    font-size: 23px;
+    color: var(--color-fuente-modo-oscuro);
+  }
 
-	a{
-		text-decoration: none;
-		color: var(--color-blanco);
-	}
+  h3 {
+    font-size: 22px;
+  }
 
-	li{
-		list-style: none;
-	}
+  p {
+    font-size: 14px;
+  }
 
-	.fecha{
-		color: var(--color-fuente-fechas);
-	}
+  a {
+    text-decoration: none;
+    color: var(--color-blanco);
+  }
 
-	html{
-		background-color: var(--color-principal-oscuro);
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
+  li {
+    list-style: none;
+  }
 
-	body{
-		width: 100%;
-		max-width: var(--ancho-maximo);
-		font-family: 'Inter Variable', sans-serif;
-		color: var(--color-blanco);
-	}
+  .container-slot h1,
+  .container-slot h2,
+  .container-slot h3,
+  .container-slot h4,
+  .container-slot h5,
+  .container-slot h6 {
+    margin-top: 1.5em; 
+    margin-bottom: 0.5em; 
+    line-height: 1.2; 
+    font-weight: bold;
+  }
 
-    .container-slot{
-        padding: 80px 20px;
-    }
-    
+  .container-slot h1 {
+    font-size: 2.5rem;
+    border-bottom: 2px solid #ddd; 
+    padding-bottom: 0.3em;
+  }
+
+  .container-slot h2 {
+    font-size: 2rem;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.2em;
+  }
+
+  .container-slot h3 {
+    font-size: 1.75rem;
+  }
+
+  .container-slot h4 {
+    font-size: 1.5rem;
+  }
+
+  .container-slot h5 {
+    font-size: 1.25rem;
+  }
+
+  .container-slot h6 {
+    font-size: 1rem;
+    color: #666;
+  }
+
+
+  .container-slot p {
+    margin: 1em 0; 
+    font-size: 1rem;
+  }
+
+  .container-slot ul,
+  .container-slot ol {
+    margin: 1em 0; 
+    padding-left: 2em; 
+  }
+
+  .container-slot li {
+    margin-bottom: 0.5em; 
+  }
+
+  .container-slot a {
+    color: #0070f3; 
+    text-decoration: underline;
+  }
+
+  .container-slot a:hover {
+    color: #0056b3; 
+    text-decoration: none;
+  }
+
+  .container-slot pre {
+    padding: 1em;
+    border-radius: 5px;
+    overflow-x: auto; 
+    margin: 1.5em 0;
+  }
+
+  .container-slot code {
+    font-family: "Courier New", monospace; 
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+  }
+
+  .container-slot blockquote {
+    border-left: 4px solid #ddd;
+    padding-left: 1em;
+    margin: 1em 0;
+    font-style: italic;
+    color: #555;
+  }
+
+  .container-slot table {
+    width: 100%;
+    border-collapse: collapse; 
+    margin: 1.5em 0;
+  }
+
+  .container-slot th,
+  .container-slot td {
+    border: 1px solid #ddd;
+    padding: 0.75em;
+    text-align: left;
+  }
+
+  .container-slot th {
+    background: #f7f7f7;
+    font-weight: bold;
+  }
+
+  .container-slot hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 2em 0;
+  }
 </style>
