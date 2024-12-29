@@ -13,10 +13,7 @@ const {titulo, descripcionPrevia, url} = Astro.props
     <h2>{titulo}</h2>
     <p>{descripcionPrevia}</p>
     <div>
-        <BotonTarjetaArticulos 
-        titulo='Visitar Recurso ->'
-        url={url}
-        />
+        <a href={url}>Leer más -></a>
     </div>
 </article>
 
