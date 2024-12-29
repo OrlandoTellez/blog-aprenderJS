@@ -30,12 +30,12 @@ const { tituloPagina } = Astro.props;
 
 <style is:global>
   :root {
-    --color-principal-oscuro: #FFF6E3;
-    --color-secundario-oscuro: #F6EFBD;
-    --color-fuente-modo-oscuro: #000000;
+    --color-principal-oscuro: #020d22;
+    --color-secundario-oscuro: #0b1726;
+    --color-fuente-modo-oscuro: #ffffff;
     --color-boton-oscuro: #354b6b;
     --color-fuente-fechas: #9ca1a1;
-    --color-negro: #000000;
+    --color-negro: #ffffff;
     --ancho-maximo: 1024px;
   }
 
@@ -101,6 +101,7 @@ const { tituloPagina } = Astro.props;
     margin-bottom: 0.5em; 
     line-height: 1.2; 
     font-weight: bold;
+    color: white;
   }
 
   .container-slot h1 {
@@ -129,13 +130,14 @@ const { tituloPagina } = Astro.props;
 
   .container-slot h6 {
     font-size: 1rem;
-    color: #666;
+    color: #ffffff;
   }
 
 
   .container-slot p {
     margin: 1em 0; 
     font-size: 1rem;
+    color: white;
   }
 
   .container-slot ul,
@@ -146,6 +148,7 @@ const { tituloPagina } = Astro.props;
 
   .container-slot li {
     margin-bottom: 0.5em; 
+    color: white;
   }
 
   .container-slot a {
@@ -176,7 +179,7 @@ const { tituloPagina } = Astro.props;
     padding-left: 1em;
     margin: 1em 0;
     font-style: italic;
-    color: #555;
+    color: #ffffff;
   }
 
   .container-slot table {
