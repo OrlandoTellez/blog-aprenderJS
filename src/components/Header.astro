@@ -1,13 +1,14 @@
 ---
 import iconJavascript from "@/assets/iconos/JavaScript.svg";
+import logo from "@/assets/iconos/logo-3d.svg"
 import iconMenuHamburguesaModoOscuro from "@/assets/iconos/MenuHamburguesa-claro.svg"
 ---
 
 <header>
   <figure>
     <a href="/" class="logo-link">
-      <img src={iconJavascript.src} alt="logo" />
-      <h2>JavaScript</h2>
+      <img src={logo.src} alt="logo" />
+      <h2>JS - doc</h2>
     </a>
   </figure>
   <div class="opacity on"></div>
@@ -38,7 +39,8 @@ import iconMenuHamburguesaModoOscuro from "@/assets/iconos/MenuHamburguesa-claro
     
     .logo-link{
         display: flex;
-        gap: 10px;
+        gap: 15px;
+        align-items: center;
     }
 
     nav{
@@ -51,7 +53,7 @@ import iconMenuHamburguesaModoOscuro from "@/assets/iconos/MenuHamburguesa-claro
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        padding-top: 80px;
         background-color: var(--color-secundario-oscuro);
         transition: all ease .4s;
 
