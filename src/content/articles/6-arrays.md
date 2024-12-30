@@ -1,5 +1,5 @@
 ---
-titulo: Arrays en JavaScript
+titulo: Arrays 
 descripcionPrevia: Estructuras de datos fundamentales que permiten almacenar colecciones de elementos
 tag: Principiante
 layout: "../../layouts/PlantillaArticulos.astro"

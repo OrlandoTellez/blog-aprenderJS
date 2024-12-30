@@ -1,5 +1,5 @@
 ---
-titulo: Sintaxis Básica de JavaScript
+titulo: Sintaxis Básica 
 descripcionPrevia: En este artículo, exploraremos las bases de su sintaxis, incluyendo comentarios, variables, tipos de datos y operadores.
 tag: Principiante
 layout: "../../layouts/PlantillaArticulos.astro"

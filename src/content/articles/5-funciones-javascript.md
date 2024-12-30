@@ -1,5 +1,5 @@
 ---
-titulo: Funciones en JavaScript
+titulo: Funciones
 descripcionPrevia: Aprenderás todo sobre las funciones, desde su declaración básica hasta el uso de parámetros y valores de retorno
 tag: Principiante
 layout: "../../layouts/PlantillaArticulos.astro"

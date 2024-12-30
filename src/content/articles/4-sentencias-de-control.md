@@ -1,5 +1,5 @@
 ---
-titulo: Sentencias de control en JavaScript
+titulo: Sentencias de control 
 descripcionPrevia: Exploraremos las principales estructuras de control, incluidas las condicionales y los bucles.
 tag: Principiante
 layout: "../../layouts/PlantillaArticulos.astro"
