@@ -21,8 +21,9 @@ const { tituloPagina } = Astro.props;
   </head>
   <body>
     <Header />
-    <slot />
-    
+    <div class="container-slot">
+      <slot />
+    </div>
     <Footer />
   </body>
 </html>
@@ -85,8 +86,15 @@ const { tituloPagina } = Astro.props;
 
   body {
     width: 100%;
-    max-width: var(--ancho-maximo);
     font-family: "Inter Variable", sans-serif;
     color: var(--color-negro);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container-slot{
+    width: 100%;
+    max-width: var(--ancho-maximo);
   }
 </style>

@@ -1,129 +1,134 @@
 ---
 import iconJavascript from "@/assets/iconos/JavaScript.svg";
-import logo from "@/assets/iconos/logo-3d.svg"
-import iconMenuHamburguesaModoOscuro from "@/assets/iconos/MenuHamburguesa-claro.svg"
+import logo from "@/assets/iconos/logo-3d.svg";
+import iconMenuHamburguesaModoOscuro from "@/assets/iconos/MenuHamburguesa-claro.svg";
 ---
 
 <header>
-  <figure>
-    <a href="/" class="logo-link">
-      <img src={logo.src} alt="logo" />
-      <h2>JS - doc</h2>
-    </a>
-  </figure>
-  <div class="opacity on"></div>
-  <figure class="menu-icon">
-    <img src={iconMenuHamburguesaModoOscuro.src} alt="icono-tres barras">
-  </figure>
-  <nav class="contenedor active">
-    <ul>
-      <li><a href="/">Inicio</a></li>
-      <li><a href="/tutoriales">Tutoriales</a></li>
-      <li><a href="/recursos">Recursos</a></li>
-      <li><a href="/sobreMi">Sobre mi</a></li>
-    </ul>
-  </nav>
+  <div class="container-header">
+    <figure>
+      <a href="/" class="logo-link">
+        <img src={logo.src} alt="logo" />
+        <h2>JS - Doc</h2>
+      </a>
+    </figure>
+    <div class="opacity on"></div>
+    <figure class="menu-icon">
+      <img src={iconMenuHamburguesaModoOscuro.src} alt="icono-tres barras" />
+    </figure>
+    <nav class="contenedor active">
+      <ul>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/tutoriales">Tutoriales</a></li>
+        <li><a href="/recursos">Recursos</a></li>
+        <li><a href="/sobreMi">Sobre mi</a></li>
+      </ul>
+    </nav>
+  </div>
 </header>
 
 <style>
-    header{
+  header {
+    width: 100%;
+    background-color: var(--color-secundario-oscuro);
+    position: fixed;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .container-header {
+    max-width: var(--ancho-maximo);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo-link {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+
+  nav {
+    position: absolute;
+    height: 100vh;
+    width: 80vw;
+    left: 0;
+    top: 0;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80px;
+    background-color: var(--color-secundario-oscuro);
+    transition: all ease 0.4s;
+
+    && ul {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      && li {
         width: 100%;
-        max-width: var(--ancho-maximo);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background-color: var(--color-secundario-oscuro);
-        padding: 20px;
-        position: fixed;
-    }
-    
-    .logo-link{
-        display: flex;
-        gap: 15px;
-        align-items: center;
-    }
-
-    nav{
-        position: absolute;
-        height: 100vh;
-        width: 80vw;
-        left: 0;
-        top: 0;
-        z-index: 20;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding-top: 80px;
-        background-color: var(--color-secundario-oscuro);
-        transition: all ease .4s;
-
-        && ul{
+        font-size: 20px;
+        && a {
+          display: block;
           width: 100%;
-          display: flex;
-          flex-direction: column;
+          padding: 20px;
+        }
+      }
 
-          && li{
+      && li:hover {
+        border-bottom: 1px solid white;
+      }
+    }
+  }
+
+  .active {
+    transform: translate(-1200px);
+  }
+
+  @media only screen and (min-width: 1024px) {
+    .menu-icon {
+      display: none;
+    }
+
+    nav {
+      position: static;
+      height: 100%;
+      width: 35%;
+      transition: all ease 0s;
+      padding-top: 0px;
+      && ul {
+        flex-direction: row;
+        gap: 20px;
+        text-align: center;
+
+        && li {
+          padding: 0px;
+          font-size: 16px;
+          && a {
+            display: block;
             width: 100%;
-            font-size: 20px;
-            && a{
-              display: block;
-              width: 100%;
-              padding: 20px;
-            }
+            padding: 0px;
           }
-
-          && li:hover{
-            border-bottom: 1px solid white;
-          }
-
         }
+      }
     }
 
-    .active{
-        transform: translate(-1200px);
+    .active {
+      transform: none;
     }
-    
-
-    @media only screen and (min-width: 1024px){
-        .menu-icon{
-            display: none;
-        }
-
-        nav{
-            position: static;
-            height: 100%;
-            width: 35%;
-            transition: all ease 0s;
-            padding-top: 0px;
-            && ul{
-              flex-direction: row;
-              gap: 20px;
-              text-align: center;
-              
-              && li{
-                padding: 0px;
-                font-size: 16px;
-                && a{
-                  display: block;
-                  width: 100%;
-                  padding: 0px;
-                }
-              }
-            }
-        }
-
-        .active{
-            transform: none;
-        }
-
-        
-    }
+  }
 </style>
 
 <script>
-    let icono = document.querySelector(".menu-icon")
-    let contenedor = document.querySelector(".contenedor")
-    icono?.addEventListener("click", () => {
-        contenedor?.classList.toggle("active")
-    })
+  let icono = document.querySelector(".menu-icon");
+  let contenedor = document.querySelector(".contenedor");
+  icono?.addEventListener("click", () => {
+    contenedor?.classList.toggle("active");
+  });
 </script>
