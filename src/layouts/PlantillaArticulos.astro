@@ -55,13 +55,17 @@ const { tituloPagina } = Astro.props;
 
   body {
     width: 100%;
-    max-width: var(--ancho-maximo);
     font-family: "Inter Variable", sans-serif;
-    color: var(--color-blanco);
+    color: var(--color-negro);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .container-slot {
     padding: 50px 20px;
+    width: 100%;
+    max-width: var(--ancho-maximo);
   }
 
   h1 {
