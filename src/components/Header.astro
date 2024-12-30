@@ -54,6 +54,27 @@ import iconMenuHamburguesaModoOscuro from "@/assets/iconos/MenuHamburguesa-claro
         justify-content: center;
         background-color: var(--color-secundario-oscuro);
         transition: all ease .4s;
+
+        && ul{
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+
+          && li{
+            width: 100%;
+            font-size: 20px;
+            && a{
+              display: block;
+              width: 100%;
+              padding: 20px;
+            }
+          }
+
+          && li:hover{
+            border-bottom: 1px solid white;
+          }
+
+        }
     }
 
     .active{
@@ -71,16 +92,29 @@ import iconMenuHamburguesaModoOscuro from "@/assets/iconos/MenuHamburguesa-claro
             height: 100%;
             width: 35%;
             transition: all ease 0s;
+
+            && ul{
+              flex-direction: row;
+              gap: 20px;
+              text-align: center;
+              
+              && li{
+                padding: 0px;
+                font-size: 16px;
+                && a{
+                  display: block;
+                  width: 100%;
+                  padding: 0px;
+                }
+              }
+            }
         }
 
         .active{
             transform: none;
         }
 
-        ul{
-            display: flex;
-            gap: 20px;
-        }
+        
     }
 </style>
 
