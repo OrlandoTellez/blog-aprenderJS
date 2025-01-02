@@ -8,7 +8,7 @@ layout: "../../layouts/PlantillaArticulos.astro"
 # `this` en funciones y Closures en JavaScript
 
 En JavaScript, `this` y los closures son conceptos fundamentales que a menudo confunden a los principiantes, pero son esenciales para escribir código limpio y efectivo. En este artículo, exploraremos qué son, cómo funcionan y cómo puedes utilizarlos.
-
+        
 ## El contexto de `this` en funciones
 
 `this` es una palabra clave que hace referencia al contexto en el que se ejecuta una función. Su valor depende de cómo se llame la función y no de dónde está definida.
