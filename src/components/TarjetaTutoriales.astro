@@ -33,8 +33,17 @@ const {titulo, descripcionPrevia, tag, slug} = Astro.props
         gap: 15px;
     }
 
+    p{
+        color: #818181;
+    }
+
     div{
         display: flex;
         justify-content: space-between;
+        
+        && p{
+            color: #578E7E;
+            font-weight: bold;
+        }
     }
 </style>
