@@ -96,7 +96,7 @@ const { tituloPagina } = Astro.props;
 
   a {
     text-decoration: none;
-    color: var(--color-blanco);
+    color: var(--color-fuente);
   }
 
   li {
@@ -201,7 +201,10 @@ const { tituloPagina } = Astro.props;
     width: 100%;
     border-collapse: collapse; 
     margin: 1.5em 0;
+    color: var(--color-fuente)
   }
+
+  
 
   .container-slot th,
   .container-slot td {
@@ -211,7 +214,7 @@ const { tituloPagina } = Astro.props;
   }
 
   .container-slot th {
-    background: #f7f7f7;
+    background: var(--color-secundario);
     font-weight: bold;
   }
 
