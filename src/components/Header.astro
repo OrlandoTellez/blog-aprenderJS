@@ -2,6 +2,8 @@
 import iconJavascript from "@/assets/iconos/JavaScript.svg";
 import logo from "@/assets/iconos/logo-3d.svg";
 import iconMenuHamburguesaModoOscuro from "@/assets/iconos/MenuHamburguesa-claro.svg";
+import iconSol from "@/assets/iconos/sun.svg";
+import iconLuna from "@/assets/iconos/moon.svg";
 ---
 
 <header>
@@ -22,6 +24,12 @@ import iconMenuHamburguesaModoOscuro from "@/assets/iconos/MenuHamburguesa-claro
         <li><a href="/tutoriales">Tutoriales</a></li>
         <li><a href="/recursos">Recursos</a></li>
         <li><a href="/sobreMi">Sobre mi</a></li>
+        <li>
+          <button id="theme-toggle" class="theme-button">
+            <img src={iconSol.src} alt="Modo claro" class="theme-icon sun" />
+            <img src={iconLuna.src} alt="Modo oscuro" class="theme-icon moon" />
+          </button>
+        </li>
       </ul>
     </nav>
   </div>
@@ -36,6 +44,23 @@ import iconMenuHamburguesaModoOscuro from "@/assets/iconos/MenuHamburguesa-claro
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .theme-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .theme-icon {
+    width: 24px;
+    height: 24px;
+    display: none;
+  }
+
+  html[data-theme="dark"] .moon,
+  html[data-theme="light"] .sun {
+    display: block;
   }
 
   .container-header {
@@ -125,10 +150,28 @@ import iconMenuHamburguesaModoOscuro from "@/assets/iconos/MenuHamburguesa-claro
   }
 </style>
 
-<script>
+<script is:inline>
   let icono = document.querySelector(".menu-icon");
   let contenedor = document.querySelector(".contenedor");
   icono?.addEventListener("click", () => {
     contenedor?.classList.toggle("active");
+  });
+
+  const themeToggle = document.getElementById("theme-toggle");
+  const html = document.documentElement;
+
+  const savedTheme =
+    localStorage.getItem("theme") ||
+    (window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light");
+
+  html.setAttribute("data-theme", savedTheme);
+
+  themeToggle.addEventListener("click", () => {
+    const newTheme =
+      html.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    html.setAttribute("data-theme", newTheme);
+    localStorage.setItem("theme", newTheme);
   });
 </script>

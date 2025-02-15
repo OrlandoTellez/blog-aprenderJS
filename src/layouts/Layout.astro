@@ -39,6 +39,14 @@ const { tituloPagina } = Astro.props;
     --ancho-maximo: 1024px;
   }
 
+  [data-theme="light"] {
+    --color-principal-oscuro: #ffffff;
+    --color-secundario-oscuro: #f0f4f8;
+    --color-fuente-modo-oscuro: #020d22;
+    --color-boton-oscuro: #d1d5db;
+    --color-fuente-fechas: #4b5563;
+  }
+
   * {
     padding: 0;
     margin: 0;
@@ -65,7 +73,7 @@ const { tituloPagina } = Astro.props;
 
   a {
     text-decoration: none;
-    color: var(--color-blanco);
+    color: var(--color-fuente-modo-oscuro);
   }
 
   li {
@@ -91,9 +99,12 @@ const { tituloPagina } = Astro.props;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: var(--color-principal-oscuro);
+    color: var(--color-fuente-modo-oscuro);
+    transition: inherit;
   }
 
-  .container-slot{
+  .container-slot {
     width: 100%;
     max-width: var(--ancho-maximo);
   }
