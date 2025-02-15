@@ -201,10 +201,12 @@ const { tituloPagina } = Astro.props;
     width: 100%;
     border-collapse: collapse; 
     margin: 1.5em 0;
-    color: var(--color-fuente)
+    color: var(--color-fuente);
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    
   }
-
-  
 
   .container-slot th,
   .container-slot td {
