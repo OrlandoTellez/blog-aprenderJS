@@ -30,20 +30,20 @@ const { tituloPagina } = Astro.props;
 
 <style is:global>
   :root {
-    --color-principal-oscuro: #020d22;
-    --color-secundario-oscuro: #0b1726;
-    --color-fuente-modo-oscuro: #ffffff;
-    --color-boton-oscuro: #354b6b;
+    --color-principal: #020d22;
+    --color-secundario: #0b1726;
+    --color-fuente: #ffffff;
+    --color-boton: #354b6b;
     --color-fuente-fechas: #9ca1a1;
     --color-blanco: #ffffff;
     --ancho-maximo: 1024px;
   }
 
   [data-theme="light"] {
-    --color-principal-oscuro: #ffffff;
-    --color-secundario-oscuro: #f0f4f8;
-    --color-fuente-modo-oscuro: #020d22;
-    --color-boton-oscuro: #d1d5db;
+    --color-principal: #ffffff;
+    --color-secundario: #f0f4f8;
+    --color-fuente: #020d22;
+    --color-boton: #d1d5db;
     --color-fuente-fechas: #4b5563;
   }
 
@@ -55,12 +55,12 @@ const { tituloPagina } = Astro.props;
 
   h1 {
     font-size: 40px;
-    color: var(--color-fuente-modo-oscuro);
+    color: var(--color-fuente);
   }
 
   h2 {
     font-size: 23px;
-    color: var(--color-fuente-modo-oscuro);
+    color: var(--color-fuente);
   }
 
   h3 {
@@ -73,7 +73,7 @@ const { tituloPagina } = Astro.props;
 
   a {
     text-decoration: none;
-    color: var(--color-fuente-modo-oscuro);
+    color: var(--color-fuente);
   }
 
   li {
@@ -85,7 +85,7 @@ const { tituloPagina } = Astro.props;
   }
 
   html {
-    background-color: var(--color-principal-oscuro);
+    background-color: var(--color-principal);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -99,8 +99,8 @@ const { tituloPagina } = Astro.props;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: var(--color-principal-oscuro);
-    color: var(--color-fuente-modo-oscuro);
+    background-color: var(--color-principal);
+    color: var(--color-fuente);
     transition: inherit;
   }
 
