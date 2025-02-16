@@ -2,6 +2,7 @@
 import iconJavascript from "@/assets/iconos/JavaScript.svg";
 import logo from "@/assets/iconos/logo-3d.svg";
 import iconMenuHamburguesaModoOscuro from "@/assets/iconos/MenuHamburguesa-claro.svg";
+import iconMenuHamburguesaModoClaro from "@/assets/iconos/MenuHamburguesa-oscuro.svg";
 import iconSol from "@/assets/iconos/sun.svg";
 import iconLuna from "@/assets/iconos/moon.svg";
 ---
@@ -16,7 +17,7 @@ import iconLuna from "@/assets/iconos/moon.svg";
     </figure>
     <div class="opacity on"></div>
     <figure class="menu-icon">
-      <img src={iconMenuHamburguesaModoOscuro.src} alt="icono-tres barras" />
+      <img class="menu-hamburguesa--icon" src={iconMenuHamburguesaModoOscuro.src} alt="icono-tres barras" />
     </figure>
     <nav class="contenedor active">
       <ul>
@@ -24,7 +25,7 @@ import iconLuna from "@/assets/iconos/moon.svg";
         <li><a href="/tutoriales">Tutoriales</a></li>
         <li><a href="/recursos">Recursos</a></li>
         <li><a href="/sobreMi">Sobre mi</a></li>
-        <li>
+        <li class="hover-icon">
           <button id="theme-toggle" class="theme-button">
             <img src={iconSol.src} alt="Modo claro" class="theme-icon sun" />
             <img src={iconLuna.src} alt="Modo oscuro" class="theme-icon moon" />
@@ -50,6 +51,8 @@ import iconLuna from "@/assets/iconos/moon.svg";
     background: transparent;
     border: none;
     cursor: pointer;
+    width: 100%;
+    padding: 0px 20px;
   }
 
   .theme-icon {
@@ -57,6 +60,8 @@ import iconLuna from "@/assets/iconos/moon.svg";
     height: 24px;
     display: none;
   }
+
+  
 
   html[data-theme="dark"] .moon,
   html[data-theme="light"] .sun {
@@ -109,12 +114,20 @@ import iconLuna from "@/assets/iconos/moon.svg";
       && li:hover {
         border-bottom: 1px solid white;
       }
+
+      .hover-icon:hover {
+        border-bottom: none;
+      }
     }
   }
 
   .active {
     transform: translate(-1200px);
   }
+
+  
+
+
 
   @media only screen and (min-width: 1024px) {
     .menu-icon {
@@ -124,7 +137,7 @@ import iconLuna from "@/assets/iconos/moon.svg";
     nav {
       position: static;
       height: 100%;
-      width: 35%;
+      width: 45%;
       transition: all ease 0s;
       padding-top: 0px;
       && ul {
@@ -151,10 +164,12 @@ import iconLuna from "@/assets/iconos/moon.svg";
 </style>
 
 <script is:inline>
-  let icono = document.querySelector(".menu-icon");
-  let contenedor = document.querySelector(".contenedor");
+  const icono = document.querySelector(".menu-icon");
+  
+  const contenedor = document.querySelector(".contenedor");
   icono?.addEventListener("click", () => {
     contenedor?.classList.toggle("active");
+
   });
 
   const themeToggle = document.getElementById("theme-toggle");
@@ -170,7 +185,7 @@ import iconLuna from "@/assets/iconos/moon.svg";
 
   themeToggle.addEventListener("click", () => {
     const newTheme =
-      html.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    html.getAttribute("data-theme") === "dark" ? "light" : "dark";
     html.setAttribute("data-theme", newTheme);
     localStorage.setItem("theme", newTheme);
   });
