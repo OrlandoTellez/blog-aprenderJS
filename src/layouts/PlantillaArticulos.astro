@@ -37,6 +37,7 @@ const { tituloPagina } = Astro.props;
     --color-fuente-fechas: #9ca1a1;
     --color-negro: #000000;
     --ancho-maximo: 1024px;
+    --color-codigo: #000000;
   }
 
   [data-theme="light"] {
@@ -45,6 +46,7 @@ const { tituloPagina } = Astro.props;
     --color-fuente: #020d22;
     --color-boton: #d1d5db;
     --color-fuente-fechas: #4b5563;
+    --color-codigo: #01284f;
   }
 
   * {
@@ -179,7 +181,7 @@ const { tituloPagina } = Astro.props;
     border-radius: 5px;
     overflow-x: auto; 
     margin: 1.5em 0;
-    background-color: #000000  !important;
+    background-color: var(--color-codigo)  !important;
   }
 
   .container-slot code {
