@@ -2,11 +2,10 @@
 interface Props{
     titulo: string;
     descripcion: string;
-    fecha: string;
     url: string;
 }
 
-const {titulo, descripcion, fecha, url} = Astro.props
+const {titulo, descripcion, url} = Astro.props
 
 ---
 
@@ -14,7 +13,6 @@ const {titulo, descripcion, fecha, url} = Astro.props
 <a href={url}> 
     <h2>{titulo}</h2>
     <p>{descripcion}</p>
-    <p class="fecha">{fecha}</p>
 </a>
 
 
