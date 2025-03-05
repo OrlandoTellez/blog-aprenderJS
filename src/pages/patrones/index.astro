@@ -3,25 +3,26 @@ import TarjetaTutoriales from "@/components/TarjetaTutoriales.astro";
 import Layout from "@/layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
-const articulos = await getCollection("articles")
+const patrones = await getCollection("patrones");
 ---
 
-<Layout tituloPagina="Tutoriales">
+<Layout tituloPagina="Patrones de diseño">
   <section>
     <div>
-      <h1>Tutoriales de JavaScript</h1>
+        <h1>Patrones de diseño</h1>
     </div>
+
     <article>
-      {
-        articulos.map((articulo) => (
-          <TarjetaTutoriales  
-          titulo={articulo.data.titulo}
-          descripcionPrevia={articulo.data.descripcionPrevia}
-          tag={articulo.data.tag}
-          slug={`tutoriales/${articulo.slug}`}
-          />
-        ))
-      }
+        {
+            patrones.map((patron) => (
+                <TarjetaTutoriales  
+                titulo={patron.data.titulo}
+                descripcionPrevia={patron.data.descripcionPrevia}
+                tag={patron.data.tag}
+                slug={`patrones/${patron.slug}`}
+                />
+            ))
+        }
     </article>
   </section>
 </Layout>
@@ -37,7 +38,6 @@ const articulos = await getCollection("articles")
     gap: 30px;
   }
 
-  
   article{
     width: 100%;
     margin-top: 25px;
