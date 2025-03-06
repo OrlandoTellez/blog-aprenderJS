@@ -1,0 +1,55 @@
+---
+import TarjetaTutoriales from "@/components/TarjetaTutoriales.astro";
+import Layout from "@/layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const patrones = await getCollection("base-de-datos");
+---
+
+<Layout tituloPagina="Base de datos">
+  <section>
+    <div>
+        <h1>Base de datos</h1>
+    </div>
+
+    <article>
+        {
+            patrones.map((patron) => (
+                <TarjetaTutoriales  
+                titulo={patron.data.titulo}
+                descripcionPrevia={patron.data.descripcionPrevia}
+                tag={patron.data.tag}
+                slug={`base-de-datos/${patron.slug}`}
+                />
+            ))
+        }
+    </article>
+  </section>
+</Layout>
+
+<style>
+  section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 20px;
+    gap: 30px;
+  }
+
+  article{
+    width: 100%;
+    margin-top: 25px;
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  
+  div{
+    height: 20vh;
+    display: flex;
+    align-items: center;  
+  }
+</style>
