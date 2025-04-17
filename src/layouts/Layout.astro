@@ -30,11 +30,6 @@ const { tituloPagina } = Astro.props;
 
 <style is:global>
   :root {
-    --color-principal: #020d22;
-    --color-secundario: #0b1726;
-    --color-fuente: #ffffff;
-    --color-boton: #354b6b;
-    --color-fuente-fechas: #9ca1a1;
     --color-blanco: #ffffff;
     --ancho-maximo: 1024px;
   }
@@ -45,6 +40,14 @@ const { tituloPagina } = Astro.props;
     --color-fuente: #020d22;
     --color-boton: #d1d5db;
     --color-fuente-fechas: #4b5563;
+  }
+
+  [data-theme="dark"] {
+    --color-principal: #020d22;
+    --color-secundario: #0b1726;
+    --color-fuente: #ffffff;
+    --color-boton: #354b6b;
+    --color-fuente-fechas: #9ca1a1;
   }
 
   * {

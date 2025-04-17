@@ -14,9 +14,6 @@ import iconLuna from "@/assets/iconos/moon.svg";
       </a>
     </figure>
     <div class="opacity on"></div>
-    <figure class="menu-icon">
-      <img class="menu-hamburguesa--icon" src={iconMenuHamburguesaModoOscuro.src} alt="icono-tres barras" />
-    </figure>
     <nav class="contenedor active">
       <ul>
         <li><a href="/">Inicio</a></li>
@@ -25,14 +22,41 @@ import iconLuna from "@/assets/iconos/moon.svg";
         <li><a href="/base-de-datos">Database</a></li>
         <li><a href="/recursos">Recursos</a></li>
         <li><a href="/sobreMi">Sobre mi</a></li>
-        <li class="hover-icon">
-          <button id="theme-toggle" class="theme-button">
-            <img src={iconSol.src} alt="Modo claro" class="theme-icon sun" />
-            <img src={iconLuna.src} alt="Modo oscuro" class="theme-icon moon" />
-          </button>
-        </li>
       </ul>
     </nav>
+
+    
+    <div class="container-header--icon">
+      <figure class="menu-icon">
+        <svg  
+            xmlns="http://www.w3.org/2000/svg"  
+            class="menu-hamburguesa--icon"
+            width="24"  
+            height="24"  
+            viewBox="0 0 24 24"  
+            fill="none"  
+            stroke="currentColor"  
+            stroke-width="2"  
+            stroke-linecap="round"  
+            stroke-linejoin="round"  
+            class="icon icon-tabler icons-tabler-outline icon-tabler-menu-2">
+            <path 
+            stroke="none" 
+            d="M0 0h24v24H0z" 
+            fill="none"/><path 
+            d="M4 6l16 0" /><path 
+            d="M4 12l16 0" /><path 
+            d="M4 18l16 0" />
+        </svg>
+      </figure>
+      <div class="hover-icon">
+        <button id="theme-toggle" class="theme-button">
+          <img src={iconSol.src} alt="Modo claro" class="theme-icon sun" />
+          <img src={iconLuna.src} alt="Modo oscuro" class="theme-icon moon" />
+        </button>
+      </div>
+    </div>
+
   </div>
 </header>
 
@@ -41,10 +65,12 @@ import iconLuna from "@/assets/iconos/moon.svg";
     width: 100%;
     background-color: var(--color-secundario);
     position: fixed;
-    padding: 10px;
+    padding: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+    top: 0;
+    z-index: 10;
   }
 
   .theme-button {
@@ -67,11 +93,18 @@ import iconLuna from "@/assets/iconos/moon.svg";
   }
 
   .container-header {
-    max-width: var(--ancho-maximo);
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    max-width: var(--ancho-maximo);
+
+  }
+
+  .container-header--icon {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
   }
 
   .logo-link {
@@ -98,17 +131,25 @@ import iconLuna from "@/assets/iconos/moon.svg";
       width: 100%;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: start;
       && li {
         width: 100%;
-        font-size: 20px;
         && a {
+          font-size: 1.2rem;
+          display: block;
+          width: 100%;
+          padding: 20px;
+          color: var(--color-fuente);
+
           display: block;
           width: 100%;
           padding: 20px;
         }
-      }
 
+        && a:hover {
+          color: var(--color-);
+        }
+      }
       && li:hover {
         border-bottom: 1px solid var(--color-fuente);
       }
@@ -119,15 +160,38 @@ import iconLuna from "@/assets/iconos/moon.svg";
     }
   }
 
+  .menu-hamburguesa--icon {
+    color: var(--color-alternar);
+  }
+
   .active {
     transform: translate(-1200px);
   }
 
-  
+  .menu-icon{
+    display: grid;
+  }
+
+  .hover-icon{
+    display: grid;
+  }
 
 
 
   @media only screen and (min-width: 1024px) {
+    .logo {
+      order: 1;
+    }
+
+    .container-header--icon {
+      order: 3;
+    }
+    .container-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
     .menu-icon {
       display: none;
     }
@@ -135,20 +199,25 @@ import iconLuna from "@/assets/iconos/moon.svg";
     nav {
       position: static;
       height: 100%;
-      width: 65%;
       transition: all ease 0s;
       padding-top: 0px;
+      margin-right: 40px;
+      order: 2;
+
       && ul {
         flex-direction: row;
         gap: 5px;
         text-align: center;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
 
         && li {
           padding: 0px;
           font-size: 16px;
+          width: auto;
           && a {
             display: block;
-            width: 100%;
             padding: 0px;
           }
         }
@@ -161,13 +230,13 @@ import iconLuna from "@/assets/iconos/moon.svg";
   }
 </style>
 
+
 <script is:inline>
   const icono = document.querySelector(".menu-icon");
-  
+
   const contenedor = document.querySelector(".contenedor");
   icono?.addEventListener("click", () => {
     contenedor?.classList.toggle("active");
-
   });
 
   const themeToggle = document.getElementById("theme-toggle");
@@ -183,7 +252,7 @@ import iconLuna from "@/assets/iconos/moon.svg";
 
   themeToggle.addEventListener("click", () => {
     const newTheme =
-    html.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      html.getAttribute("data-theme") === "dark" ? "light" : "dark";
     html.setAttribute("data-theme", newTheme);
     localStorage.setItem("theme", newTheme);
   });
