@@ -156,13 +156,15 @@ const { tituloPagina } = Astro.props;
 
   .container-slot ul,
   .container-slot ol {
-    margin: 1em 0; 
-    padding-left: 2em; 
+    padding-left: 1.5em; 
   }
 
   .container-slot li {
-    margin-bottom: 0.5em; 
     color: var(--color-fuente);
+    padding-left: 0.5rem;
+    line-height: 1.6;
+    list-style-type: disc; 
+    font-size: 1rem;
   }
 
   .container-slot a {
