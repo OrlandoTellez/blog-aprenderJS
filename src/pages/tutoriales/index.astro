@@ -37,7 +37,6 @@ const articulos = await getCollection("articles")
     gap: 30px;
   }
 
-  
   article{
     width: 100%;
     margin-top: 25px;
@@ -51,5 +50,11 @@ const articulos = await getCollection("articles")
     height: 20vh;
     display: flex;
     align-items: center;  
+  }
+
+  @media only screen and (min-width: 1024px){
+    section{
+      padding: 100px 0px;
+    }
   }
 </style>
