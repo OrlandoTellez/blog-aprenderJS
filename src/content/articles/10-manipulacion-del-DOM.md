@@ -1,12 +1,12 @@
 ---
-titulo: Trabajo con el DOM (Document Object Model)
+titulo: Manipulación el DOM (Document Object Model)
 descripcionPrevia: Este modelo permite a JavaScript acceder, modificar y manipular el contenido, la estructura y los estilos de una página web de manera dinámica.
 tag: Principiante
 layout: "../../layouts/PlantillaArticulos.astro"
 ---
 
 
-### Trabajo con el DOM (Document Object Model) en JavaScript
+### Manipulación del DOM (Document Object Model) en JavaScript
 
 El **DOM (Document Object Model)** es la representación estructurada de un documento HTML o XML como un árbol de nodos. Este modelo permite a JavaScript acceder, modificar y manipular el contenido, la estructura y los estilos de una página web de manera dinámica.
 
