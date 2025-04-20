@@ -1,6 +1,6 @@
 ---
-import logo from "@/assets/iconos/logo-3d.svg";
-import iconMenuHamburguesaModoOscuro from "@/assets/iconos/MenuHamburguesa-claro.svg";
+import logoClaro from "@/assets/iconos/logo-2d-claro.svg";
+import logoOscuro from "@/assets/iconos/logo-2d-oscuro.svg";
 import iconSol from "@/assets/iconos/sun.svg";
 import iconLuna from "@/assets/iconos/moon.svg";
 ---
@@ -9,8 +9,9 @@ import iconLuna from "@/assets/iconos/moon.svg";
   <div class="container-header">
     <figure>
       <a href="/" class="logo-link">
-        <img src={logo.src} alt="logo" />
-        <h2>JS - Doc</h2>
+        <img src={logoClaro.src} alt="logo claro" class="theme-icon moon" />
+        <img src={logoOscuro.src} alt="logo oscuro" class="theme-icon sun" />
+        <h2>Blog</h2>
       </a>
     </figure>
     <div class="opacity on"></div>
@@ -65,7 +66,7 @@ import iconLuna from "@/assets/iconos/moon.svg";
     width: 100%;
     background-color: var(--color-secundario);
     position: fixed;
-    padding: 10px 20px;
+    padding: 20px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -98,7 +99,6 @@ import iconLuna from "@/assets/iconos/moon.svg";
     align-items: center;
     justify-content: space-between;
     max-width: var(--ancho-maximo);
-
   }
 
   .container-header--icon {
@@ -109,7 +109,7 @@ import iconLuna from "@/assets/iconos/moon.svg";
 
   .logo-link {
     display: flex;
-    gap: 15px;
+    gap: 10px;
     align-items: center;
   }
 
