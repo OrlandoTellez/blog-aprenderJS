@@ -3,24 +3,47 @@ interface Props{
     titulo: string;
     url: string;
     clase: string;
+    linkExterno?: boolean;
 }
 
-const{titulo, url, clase} = Astro.props
+const{titulo, url, clase, linkExterno} = Astro.props
 ---
 
-<a href={url} class={clase}>{titulo}</a>
+<a href={url} class={clase} rel="noopener noreferrer" target={`${linkExterno ? "_blank" : ""}`} >
+    {titulo}
+    <slot />
+</a>
 
 <style>
     a{
-        padding: 20px 40px;
         border-radius: 10px;
+        padding: 10px;
     }
 
     .btn-principal{
+        padding: 20px 40px;
         background-color: var(--color-secundario);
     }
 
     .btn-secundario{
+        padding: 20px 40px;
+        border: 1px solid var(--border-color);
+    }
+
+    .portafolio{
+        background-color: var(--color-fuente);
+        color: var(--color-secundario);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .cv{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
         border: 1px solid var(--border-color);
     }
 </style>

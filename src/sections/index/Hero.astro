@@ -1,5 +1,6 @@
 ---
 import Boton from "@/components/Boton.astro";
+import Resaltador from "@/components/Resaltador.astro";
 
 interface Props {
   tituloSeccion: string;
@@ -10,9 +11,7 @@ const { tituloSeccion, subtituloSeccion } = Astro.props;
 ---
 
 <section>
-  <div class="resaltador">
-    <p>Nuevo artículo cada semana</p>
-  </div>
+  <Resaltador texto="Nuevo artículo cada semana"/>
   <h1>{tituloSeccion}</h1>
   <p>{subtituloSeccion}</p>
   <div class="container-btn">
@@ -62,16 +61,5 @@ const { tituloSeccion, subtituloSeccion } = Astro.props;
     margin-top: 20px;
   }
 
-  .resaltador {
-    width: 280px;
-    background-color: var(--color-secundario);
-    padding: 5px 0px;
-    border-radius: 20px;
-    text-align: center;
-    border: 1px solid var(--border-color);
-  }
-
-  .resaltador p {
-    width: 100%;
-  }
+  
 </style>

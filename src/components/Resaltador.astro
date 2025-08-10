@@ -1,0 +1,27 @@
+---
+interface Props {
+  texto: string;
+}
+
+const { texto } = Astro.props;
+---
+
+<div class="resaltador">
+  <p>{texto}</p>
+</div>
+
+<style>
+  .resaltador {
+    max-width: 280px;
+    background-color: var(--color-secundario);
+    padding: 5px 10px;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+  }
+
+  .resaltador p {
+    width: 100%;
+    font-size: 1rem;
+  }
+</style>

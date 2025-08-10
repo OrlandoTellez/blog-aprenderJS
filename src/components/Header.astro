@@ -46,17 +46,13 @@ import iconLuna from "@/assets/iconos/moon.svg";
 <style>
   header {
     width: 100%;
-    backdrop-filter: blur(10px);
     position: fixed;
-    padding: 20px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     top: 0;
     left: 0;
     z-index: 10;
-    border-radius: 50px;
-    border: 1px solid var(--border-color);
     margin-top: 20px;
   }
 
@@ -83,8 +79,12 @@ import iconLuna from "@/assets/iconos/moon.svg";
     width: 100%;
     display: flex;
     align-items: center;
+    backdrop-filter: blur(10px);
+    border-radius: 50px;
     justify-content: space-between;
     max-width: var(--ancho-maximo);
+    border: 1px solid var(--border-color);
+    padding: 20px 20px;
   }
 
   .container-header--icon {
@@ -166,8 +166,7 @@ import iconLuna from "@/assets/iconos/moon.svg";
 
   @media only screen and (min-width: 1024px) {
     header {
-      width: 90%;
-      margin: 20px;
+      margin: 20px auto;
     }
 
     .logo {

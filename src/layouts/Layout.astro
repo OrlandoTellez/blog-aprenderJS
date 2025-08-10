@@ -1,6 +1,6 @@
 ---
 import "@fontsource-variable/inter";
-import '@fontsource-variable/plus-jakarta-sans';
+import "@fontsource-variable/plus-jakarta-sans";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 
@@ -21,6 +21,7 @@ const { tituloPagina } = Astro.props;
     <title>{tituloPagina}</title>
   </head>
   <body>
+    
     <Header />
     <div class="container-slot">
       <slot />
@@ -37,7 +38,7 @@ const { tituloPagina } = Astro.props;
 
   [data-theme="light"] {
     --color-principal: #ffffff;
-    --color-secundario: #f0f4f8; 
+    --color-secundario: #f0f4f8;
     --color-span: #2f2f2f;
     --border-color: #000000;
     --color-fuente: #020d22;
@@ -54,13 +55,13 @@ const { tituloPagina } = Astro.props;
     --color-boton: #354b6b;
     --color-fuente-fechas: #9ca1a1;
   }
-  
+
   * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
   }
-  
+
   html {
     background-color: var(--color-principal);
     display: flex;
@@ -71,7 +72,7 @@ const { tituloPagina } = Astro.props;
 
   body {
     width: 100%;
-    font-family: 'Plus Jakarta Sans Variable', sans-serif;
+    font-family: "Plus Jakarta Sans Variable", sans-serif;
     color: var(--color-blanco);
     display: flex;
     flex-direction: column;
@@ -111,7 +112,6 @@ const { tituloPagina } = Astro.props;
   .fecha {
     color: var(--color-fuente-fechas);
   }
-
 
   .container-slot {
     width: 100%;

@@ -1,27 +1,53 @@
 ---
+import Boton from "@/components/Boton.astro";
+import Resaltador from "@/components/Resaltador.astro";
 import Layout from "@/layouts/Layout.astro";
+import redirectIcon from "@/assets/iconos/redirect.svg"
+import docIcon from "@/assets/iconos/doc.svg"
 ---
 
 <Layout tituloPagina="Sobre mi">
   <div class="contenedor-datos">
+    <figure>
+      <img src="imagenes/perfil/trunks.jpg" alt="img perfil" />
+      <h3>Desarrollador web</h3>
+    </figure>
     <article class="contenedor-datos--perfil">
-      <figure>
-        <img src="imagenes/perfil/gojo.jpg" alt="" />
-      </figure>
-      <article>
-        <h2>Orlando</h2>
-        <p>Desarrollador web con JavaScript</p>
-      </article>
+      <div class="info">
+        <article>
+          <h2>Sobre mí</h2>
+          <p>
+            Soy Orlando, desarrollador web centrado en JavaScript. Me encanta
+            crear interfaces limpias, accesibles y con buenas prácticas. Aquí
+            comparto lo que voy aprendiendo.
+          </p>
+          <div class="resaltadores">
+            <Resaltador texto="JavaScript"/>
+            <Resaltador texto="TypeScript"/>
+            <Resaltador texto="React"/>
+          </div>
+        </article>
+      </div>
+      <div class="contenedor-botones">
+        <Boton 
+        titulo="Portafolio" 
+        url="https://portafolio-orlando-tellez-ot.vercel.app/" 
+        clase="portafolio"
+        linkExterno={true}
+        >
+          <img src={redirectIcon.src} alt="redirect icon">
+        </Boton>
+
+        <Boton 
+        titulo="CV" 
+        url="cv-orlandogabrieltellez.pdf" 
+        clase="cv"
+        linkExterno={true}
+        >
+          <img src={docIcon.src} alt="doc icon">
+        </Boton>
+      </div>
     </article>
-    <div class="contenedor-botones">
-      <a
-        href="https://portafolio-orlando-tellez-ot.vercel.app/"
-        target="_blank"
-        rel="noopener noreferrer"
-        >Portafolio</a
-      >
-      <a href="/" target="_blank">Cv</a>
-    </div>
   </div>
 </Layout>
 
@@ -33,12 +59,12 @@ import Layout from "@/layouts/Layout.astro";
     align-items: center;
     justify-content: center;
     text-align: center;
-    height: 80vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    max-width: 1024px;
+    max-width: var(--ancho-maximo);
   }
 
   figure {
@@ -67,6 +93,11 @@ import Layout from "@/layouts/Layout.astro";
 
   p {
     color: var(--color-texto-sombreado);
+    margin-bottom: 20px;
+  }
+
+  .resaltadores{
+    display: flex;
   }
 
   @media only screen and (min-width: 1024px) {
@@ -79,18 +110,45 @@ import Layout from "@/layouts/Layout.astro";
     .contenedor-datos {
       width: 100%;
       flex-direction: row;
-      justify-content: space-between;
-      gap: 20px;
+      gap: 40px;
     }
 
     figure {
       width: 150px;
     }
 
-    .contenedor-datos--perfil{
+    .resaltadores{
       display: flex;
-      align-items: center;
+      gap: 10px;
+    }
+
+    .contenedor-datos--perfil {
+      display: flex;
+      flex-direction: column;
       gap: 20px;
+    }
+
+    .info {
+      display: flex;
+      justify-content: start;
+      align-items: start;
+    }
+
+    .info article{
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: start;
+    }
+
+    .info article h2 {
+      font-size: 2.25rem;
+    }
+
+    .info article p{
+      font-size: 1.2rem;
+      text-align: start;
+      max-width: 650px;
     }
   }
 </style>
