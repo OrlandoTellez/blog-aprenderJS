@@ -2,18 +2,25 @@
 interface Props{
     titulo: string;
     url: string;
+    clase: string;
 }
 
-const{titulo, url} = Astro.props
+const{titulo, url, clase} = Astro.props
 ---
 
-<a href={url}>{titulo}</a>
+<a href={url} class={clase}>{titulo}</a>
 
 <style>
     a{
-        color: var(--color-blanco);
-        padding: 10px 20px;
-        background-color: #60a5fa;
+        padding: 20px 40px;
         border-radius: 10px;
+    }
+
+    .btn-principal{
+        background-color: var(--color-secundario);
+    }
+
+    .btn-secundario{
+        border: 1px solid var(--border-color);
     }
 </style>

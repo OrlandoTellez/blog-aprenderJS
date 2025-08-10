@@ -1,58 +1,77 @@
 ---
-import Boton from '@/components/Boton.astro';
+import Boton from "@/components/Boton.astro";
 
-interface Props{
-    tituloSeccion: string;
-    subtituloSeccion: string;
+interface Props {
+  tituloSeccion: string;
+  subtituloSeccion: string;
 }
 
-const { tituloSeccion, subtituloSeccion } = Astro.props
+const { tituloSeccion, subtituloSeccion } = Astro.props;
 ---
 
-
 <section>
-    <h1>{tituloSeccion}</h1>
-    <p>{subtituloSeccion}</p>
-    <div>
-        <Boton 
-        titulo='Ver tutoriales'
-        url='/tutoriales'
-        />
-        <a href="/recursos">Ver recursos</a>
-    </div>
+  <div class="resaltador">
+    <p>Nuevo artículo cada semana</p>
+  </div>
+  <h1>{tituloSeccion}</h1>
+  <p>{subtituloSeccion}</p>
+  <div class="container-btn">
+    <Boton titulo="Ver tutoriales" url="/tutoriales" clase="btn-principal" />
+    <Boton titulo="Ver recursos" url="/recursos" clase="btn-secundario" />
+  </div>
 </section>
 
 <style>
-    section{
-        width: 100%;
-        height: 80vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        gap: 40px;
-        padding: 20px;
-        padding-top: 80px;
-    }
+  section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 100px;
+    padding: 50px 20px;
+  }
 
-    a{
-        color: var(--color-fuente);
-        padding: 10px 20px;
-        background-color: var(--color-secundario);
-        border-radius: 10px;
-    }
+  h1 {
+    font-size: 4.5rem;
+    color: var(--color-fuente);
+  }
 
-    a:hover{
-        background-color: var(--color-fuente);
-        color: var(--color-secundario);
-    }
+  p {
+    font-size: 1.125rem;
+  }
 
-    div{
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 15px;
-    }
+  a {
+    color: var(--color-fuente);
+    padding: 10px 20px;
+    background-color: var(--color-secundario);
+    border-radius: 10px;
+  }
+
+  a:hover {
+    background-color: var(--color-fuente);
+    color: var(--color-secundario);
+  }
+
+  .container-btn {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  .resaltador {
+    width: 280px;
+    background-color: var(--color-secundario);
+    padding: 5px 0px;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+  }
+
+  .resaltador p {
+    width: 100%;
+  }
 </style>

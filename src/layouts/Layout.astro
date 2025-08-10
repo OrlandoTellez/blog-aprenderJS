@@ -1,5 +1,6 @@
 ---
 import "@fontsource-variable/inter";
+import '@fontsource-variable/plus-jakarta-sans';
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 
@@ -36,24 +37,48 @@ const { tituloPagina } = Astro.props;
 
   [data-theme="light"] {
     --color-principal: #ffffff;
-    --color-secundario: #f0f4f8;
+    --color-secundario: #f0f4f8; 
+    --color-span: #2f2f2f;
+    --border-color: #000000;
     --color-fuente: #020d22;
     --color-boton: #d1d5db;
     --color-fuente-fechas: #4b5563;
   }
 
   [data-theme="dark"] {
-    --color-principal: #020d22;
-    --color-secundario: #0b1726;
-    --color-fuente: #ffffff;
+    --color-principal: #000000;
+    --color-secundario: #121212;
+    --color-span: #2f2f2f;
+    --border-color: #4b4b4b;
+    --color-fuente: #c5c5c5;
     --color-boton: #354b6b;
     --color-fuente-fechas: #9ca1a1;
   }
-
+  
   * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+  }
+  
+  html {
+    background-color: var(--color-principal);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  body {
+    width: 100%;
+    font-family: 'Plus Jakarta Sans Variable', sans-serif;
+    color: var(--color-blanco);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-principal);
+    color: var(--color-fuente);
+    transition: inherit;
   }
 
   h1 {
@@ -87,25 +112,6 @@ const { tituloPagina } = Astro.props;
     color: var(--color-fuente-fechas);
   }
 
-  html {
-    background-color: var(--color-principal);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  body {
-    width: 100%;
-    font-family: "Inter Variable", sans-serif;
-    color: var(--color-blanco);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: var(--color-principal);
-    color: var(--color-fuente);
-    transition: inherit;
-  }
 
   .container-slot {
     width: 100%;

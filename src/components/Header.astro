@@ -28,7 +28,6 @@ import iconLuna from "@/assets/iconos/moon.svg";
       </ul>
     </nav>
 
-    
     <div class="container-header--icon">
       <figure class="menu-icon">
         <img src={menuClaro.src} alt="Modo claro" class="theme-icon moon" />
@@ -41,14 +40,13 @@ import iconLuna from "@/assets/iconos/moon.svg";
         </button>
       </div>
     </div>
-
   </div>
 </header>
 
 <style>
   header {
     width: 100%;
-    background-color: var(--color-secundario);
+    backdrop-filter: blur(10px);
     position: fixed;
     padding: 20px 20px;
     display: flex;
@@ -56,6 +54,10 @@ import iconLuna from "@/assets/iconos/moon.svg";
     justify-content: center;
     top: 0;
     z-index: 10;
+    border-radius: 50px;
+    border: 1px solid var(--border-color);
+    width: 95%;
+    margin: 20px;
   }
 
   .theme-button {
@@ -108,7 +110,7 @@ import iconLuna from "@/assets/iconos/moon.svg";
     flex-direction: column;
     align-items: center;
     padding-top: 80px;
-    background-color: var(--color-secundario);
+    background-color: transparent;
     transition: all ease 0.4s;
 
     && ul {
@@ -116,6 +118,7 @@ import iconLuna from "@/assets/iconos/moon.svg";
       display: flex;
       flex-direction: column;
       align-items: start;
+
       && li {
         width: 100%;
         && a {
@@ -131,11 +134,11 @@ import iconLuna from "@/assets/iconos/moon.svg";
         }
 
         && a:hover {
-          color: var(--color-);
+          color: var(--color-negro);
         }
       }
       && li:hover {
-        border-bottom: 1px solid var(--color-fuente);
+        border-bottom: 1px solid #fff;
       }
 
       && .hover-icon:hover {
@@ -152,22 +155,24 @@ import iconLuna from "@/assets/iconos/moon.svg";
     transform: translate(-1200px);
   }
 
-  .menu-icon{
+  .menu-icon {
     display: grid;
   }
 
-  .hover-icon{
+  .hover-icon {
     display: grid;
   }
-
-
 
   @media only screen and (min-width: 1024px) {
+    header{
+      width: 90%;
+    }
+
     .logo {
       order: 1;
     }
 
-    .theme-button{
+    .theme-button {
       padding: 0px;
     }
 
@@ -217,7 +222,6 @@ import iconLuna from "@/assets/iconos/moon.svg";
     }
   }
 </style>
-
 
 <script is:inline>
   const icono = document.querySelector(".menu-icon");

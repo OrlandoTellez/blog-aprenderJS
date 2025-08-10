@@ -30,14 +30,17 @@ const { tituloPagina } = Astro.props;
 
 <style is:global>
   :root {
-    --color-principal: #020d22;
-    --color-secundario: #0b1726;
-    --color-fuente: #ffffff;
+    --color-principal: #000000;
+    --color-secundario: #121212;
+    --color-span: #2f2f2f;
+    --border-color: #4b4b4b;
+    --color-fuente: #c5c5c5;
     --color-boton: #354b6b;
     --color-fuente-fechas: #9ca1a1;
-    --color-negro: #000000;
+    --color-negro: #ffffff;
     --ancho-maximo: 1024px;
-    --color-codigo: #000000;
+    --color-codigo: #121212;
+
   }
 
   [data-theme="light"] {
@@ -73,7 +76,7 @@ const { tituloPagina } = Astro.props;
   }
 
   .container-slot {
-    padding: 50px 20px;
+    padding: 80px 20px;
     width: 100%;
     max-width: 75ch;
   }
@@ -111,16 +114,16 @@ const { tituloPagina } = Astro.props;
   .container-slot h4,
   .container-slot h5,
   .container-slot h6 {
-    margin-top: 1.5em; 
-    margin-bottom: 0.5em; 
-    line-height: 1.2; 
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    line-height: 1.2;
     font-weight: bold;
     color: var(--color-fuente);
   }
 
   .container-slot h1 {
     font-size: 2.5rem;
-    border-bottom: 2px solid #ddd; 
+    border-bottom: 2px solid #ddd;
     padding-bottom: 0.3em;
   }
 
@@ -147,47 +150,35 @@ const { tituloPagina } = Astro.props;
     color: var(--color-fuente);
   }
 
-
   .container-slot p {
-    margin: 1em 0; 
+    margin: 1em 0;
     font-size: 1rem;
     color: var(--color-fuente);
   }
 
   .container-slot ul,
   .container-slot ol {
-    padding-left: 1.5em; 
+    padding-left: 1.5em;
   }
 
   .container-slot li {
     color: var(--color-fuente);
     padding-left: 0.5rem;
     line-height: 1.6;
-    list-style-type: disc; 
+    list-style-type: disc;
     font-size: 1rem;
-  }
-
-  .container-slot a {
-    color: #0070f3; 
-    text-decoration: underline;
-    
-  }
-
-  .container-slot a:hover {
-    color: #0056b3; 
-    text-decoration: none;
   }
 
   .container-slot pre {
     padding: 1em;
     border-radius: 5px;
-    overflow-x: auto; 
+    overflow-x: auto;
     margin: 1.5em 0;
-    background-color: var(--color-codigo)  !important;
+    background-color: var(--color-codigo) !important;
   }
 
   .container-slot code {
-    font-family: "Courier New", monospace; 
+    font-family: "Courier New", monospace;
     padding: 0.2em 0.4em;
     border-radius: 3px;
   }
@@ -202,13 +193,12 @@ const { tituloPagina } = Astro.props;
 
   .container-slot table {
     width: 100%;
-    border-collapse: collapse; 
+    border-collapse: collapse;
     margin: 1.5em 0;
     color: var(--color-fuente);
     display: block;
     overflow-x: auto;
     white-space: nowrap;
-    
   }
 
   .container-slot th,
