@@ -53,11 +53,11 @@ import iconLuna from "@/assets/iconos/moon.svg";
     align-items: center;
     justify-content: center;
     top: 0;
+    left: 0;
     z-index: 10;
     border-radius: 50px;
     border: 1px solid var(--border-color);
-    width: 95%;
-    margin: 20px;
+    margin-top: 20px;
   }
 
   .theme-button {
@@ -103,15 +103,16 @@ import iconLuna from "@/assets/iconos/moon.svg";
     position: absolute;
     height: 100vh;
     width: 80vw;
-    left: 0;
-    top: 0;
-    z-index: 20;
+    left: -10px;
+    top: -25px;
+    z-index: 200;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 80px;
-    background-color: transparent;
     transition: all ease 0.4s;
+    background-color: var(--color-principal);
+    background-color: black;
 
     && ul {
       width: 100%;
@@ -164,8 +165,9 @@ import iconLuna from "@/assets/iconos/moon.svg";
   }
 
   @media only screen and (min-width: 1024px) {
-    header{
+    header {
       width: 90%;
+      margin: 20px;
     }
 
     .logo {
@@ -196,6 +198,7 @@ import iconLuna from "@/assets/iconos/moon.svg";
       padding-top: 0px;
       margin-right: 40px;
       order: 2;
+      background-color: transparent;
 
       && ul {
         flex-direction: row;
